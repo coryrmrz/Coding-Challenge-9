@@ -87,3 +87,30 @@ class VIPPatron extends Patron { //VIPPatron class that inherits from Patron
         }
     }
 }
+
+//Task 6: Create and Manage Sections and Patrons
+
+const thrillers = new Section("Thrillers"); //thrillers section
+const classics = new Section("Classics"); //classics section
+
+const book1 = new Book("IT", "Stephen King", "12345"); // Created Book 1
+const book2 = new Book("Animal Farm", "George Orwell", "67890"); // Created Book 2
+const book3 = new Book("Iliad", "Homer", "09876"); // Created Book 3
+
+thrillers.addBook(book1); //Book 1 in thrillers section
+classics.addBook(book2); //Book 2 in classics section
+classics.addBook(book3); //Book 3 in classics section
+
+const regularPatron = new Patron("Pedro Ramirez"); //Created Regular patron
+const vipPatron = new VIPPatron("Sonia Morales"); //Created VIP Patron
+
+regularPatron.borrowBook(book1); //regular patron borrows book 1
+
+vipPatron.borrowBook(book1); // VIP patron borrows book 1 since they have priority
+
+regularPatron.returnBook(book1); //regular patron returns book 1
+
+classics.listBooks() //list books in classics section
+
+console.log(`Total available books in Thrillers: ${thrillers.getAvailableBooks()}`); //output displaying total availble books in thrillers section
+console.log(`Total available books in Classics: ${classics.getAvailableBooks()}`);//output displaying total availble books in classics section
