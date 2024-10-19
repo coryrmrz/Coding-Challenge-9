@@ -1,7 +1,7 @@
 //Task 1: Create a Book Class
 
 class Book {
-    constructor(title, author, ISBN) { //created class with properties title, author and ISBN, and boolean _isAvailable.
+    constructor(title, author, ISBN) { //created book class with properties title, author and ISBN, and boolean _isAvailable.
         this.title = title;
         this.author = author;
         this.ISBN = ISBN;
@@ -21,24 +21,24 @@ class Book {
 //Task 2: Create a Section Class
 
 class Section {
-    constructor(name) {
+    constructor(name) { //created section class with name property and books array
         this.name = name;
         this.books = [];
     }
     addBook(book) {
-        this.books.push(book);
+        this.books.push(book); //addBook method adds book object to books array
     }
     getAvailableBooks() {
-        return this.books.filter(book => book.isAvailable).length;
+        return this.books.filter(book => book.isAvailable).length; //returns total number of books available in designated section
     }
     listBooks() {
         this.books.forEach(book => {
-            return `Book: ${book.title} by ${book.author}`;
+            return `Book: ${book.title} by ${book.author}`; //returns each book title and author in designated section
         });
     }
 //Task 5: Handle Books Borrowing & Returning
 
     calculateTotalBooksAvailable() {
-        return this.books.filter (book => book.isAvailable).length;
+        return this.books.filter (book => book.isAvailable).length; //calculates total books available by filtering and providing how many books are available
     }
 }
