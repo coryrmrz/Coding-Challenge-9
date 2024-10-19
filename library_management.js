@@ -36,4 +36,9 @@ class Section {
             return `Book: ${book.title} by ${book.author}`;
         });
     }
+//Task 5: Handle Books Borrowing & Returning
+
+    calculateTotalBooksAvailable() {
+        return this.books.filter (book => book.isAvailable).length;
+    }
 }
